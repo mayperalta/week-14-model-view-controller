@@ -1,0 +1,74 @@
+[
+    {
+        "exercise_category": "Cardio",
+        "exercise_name": "Walking",
+        "description": "Walking is a type of cardiovascular physical activity, which increases your heart rate. This improves blood flow and can lower blood pressure. It helps to boost energy levels by releasing certain hormones like endorphins and delivering oxygen throughout the body.",
+        "duration": "60",
+        "created": "07/01/2023",
+        "user_id": "1"
+    },
+    {
+        "exercise_category": "Cardio",
+        "exercise_name": "Running",
+        "description": "Running is the action of rapidly propelling yourself forward on foot. When running, there is a moment when both feet are off the ground, as opposed to walking, when one foot is always on the ground, making it a high-impact exercise.",
+        "duration": "60",
+        "created": "07/02/2023",
+        "user_id": "2"
+    },
+    {
+        "exercise_category": "Cardio",
+        "exercise_name": "Cycling",
+        "description": "Cycling improves strength, balance and coordination. It may also help to prevent falls and fractures. Riding a bike is an ideal form of exercise if you have osteoarthritis, because it is a low-impact exercise that places little stress on joints.",
+        "duration": "30",
+        "created": "07/03/2023",
+        "user_id": "3"
+    },
+    {
+        "exercise_category": "Strength",
+        "exercise_name": "Lifting weights",
+        "description": "Weight training is also known as resistance or strength training. It involves moving parts of your body against some kind of resistance, like weights, resistance bands, weight machines, or even your own body weight. Weight training is an excellent way to build muscle mass and make your muscles stronger.",
+        "duration": "5",
+        "created": "07/04/2023",
+        "user_id": "1"
+    },
+    {
+        "exercise_category": "Strength",
+        "exercise_name": "Push-ups",
+        "description": "From a prone position, the hands are placed under the shoulders with the elbows extended. Keeping the back and legs straight with the toes touching the ground. The body is lowered until the upper arm is parallel to the ground. Then reverse the movement and raise the body until arm is extended.",
+        "duration": "5",
+        "created": "07/05/2023",
+        "user_id": "2"
+    },
+    {
+        "exercise_category": "Strength",
+        "exercise_name": "Bench press",
+        "description": "Person lays supine on the bench, knees bent and feet flat on the floor. Grip the bar, grip can vary depending on goal, and un-rack bar. Lower the bar to the chest, around nipple level,  Press the bar upward until the arms are fully extended, keep the feet on the floor.",
+        "duration": "10",
+        "created": "07/06/2023",
+        "user_id": "3"
+    },
+    {
+        "exercise_category": "Yoga",
+        "exercise_name": "Cobra pose",
+        "description": "Lie on your stomach, toes pointing straight back, hands underneath the shoulders, elbows close to the body. Legs engaged, pull the belly in and up. As you inhale, lift your chest from the back of your heart. Roll the collarbones up and firm the shoulder blades into the upper back, slightly down along the spine.",
+        "duration": "10",
+        "created": "07/07/2023",
+        "user_id": "1"
+    },
+    {
+        "exercise_category": "Yoga",
+        "exercise_name": "Tree pose",
+        "description": "This yoga pose involves tucking one leg into the other while your hands are in a prayer position above your head, resembling a tree. This pose can improve balance, stability, and strengthen your core.",
+        "duration": "10",
+        "created": "07/08/2023",
+        "user_id": "2"
+    },
+    {
+        "exercise_category": "Yoga",
+        "exercise_name": "Triangle pose",
+        "description": "The triangle pose is not a forward bend but a sideways movement at the hips performed with straight arms and legs. Avoid bending your back and rounding your spine while performing a triangle pose. Your body should form the shape of the letter I rather than C.",
+        "duration": "15",
+        "created": "07/09/2023",
+        "user_id": "3"
+    }
+]

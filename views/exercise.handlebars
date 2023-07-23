@@ -1,0 +1,60 @@
+<!-- Exercise Form -->
+      <div class="tile is-parent is-justify-content-center p-6 m-3">
+        <div class="tile is-4 is-child box has-text-centered">
+          <p class="title">Log Your Workout!</p>
+        <!-- Type dropdown menu --> 
+            <div class="field">
+              <label class="label">Exercise Category:</label>
+              <div class="control">
+                <div class="select">
+                  <select id="exercise-type" name="exercise-type">
+                      {{#each workoutMap as |workout| }}
+                      <option value="{{exercise_category}}">{{exercise_category}}</option>
+                      {{/each}}
+                  </select>
+                </div>
+              </div>
+            </div>
+        <!-- Exercise name -->
+          <div class="field">
+            <label class="label">Exercise Name:</label>
+            <div class="control has-icons-left has-icons-right">
+              <input class="input" type="text" placeholder="Ex: Bench Press">
+            </div>
+          </div>
+        <!-- Duration input -->
+        <div class="field">
+            <label class="label">Duration (min):</label>
+            <div class="control has-icons-left has-icons-right">
+              <input class="input" type="text" placeholder="Minutes">
+            </div>
+        </div>
+        <!-- Date -->
+        <div class="field">
+          <label class="label">Date:</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input" type="date" id="date_created" name="trip-start" value="MM/DD/YYYY">
+              <span class="icon is-small is-left">
+                <i class="fas fa-calendar"></i>
+              </span>
+          </div>
+        </div>
+         <!-- Submit button --> 
+            <div class="field is-grouped is-justify-content-center">
+              <div class="control">
+                <button class="button is-info">Submit</button>
+              </div>
+            </div>
+        </div>
+        <!-- Workout log list -->
+        <div class="log">
+          <p class="title has-text-centered">Workout History:</p>
+           {{#each workoutMap as |workout| }}
+            <div class="notification is-link">
+            <button class="delete"></button>
+               {{format_date workout.created}}, {{workout.exercise_category}}, {{workout.exercise_name}}, {{workout.duration}} minutes
+            </div>
+            {{/each}}
+        </div>        
+      </div>
+

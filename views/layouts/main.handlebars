@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyWorkoutPal</title>
+    <link rel="icon" type="image/png" href="/images/posing.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- jQuery Library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/handlebars/dist/handlebars.min.js"></script>
+</head>
+<body>
+
+<!-- Nav Bar -->
+  <nav class="navbar is-info p-3" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <p class="navbar-item has-text-weight-bold is-size-5" width="112" height="28" >
+         MyWorkoutPal
+      </p>
+  
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <!-- Render conditional statements -->
+            {{#if logged_in}}
+                <a class="navbar-item" href='/'>Home</a>
+                <a class="navbar-item" href='/userexercise'>Exercise</a>
+                <a class="navbar-item" href='/community'>Community</a>
+            {{else}}
+                <a class="navbar-item" href='/'>Home</a>
+                <a class="navbar-item" href='/login'>Exercise</a>
+                <a class="navbar-item" href='/community'>Community</a>
+            {{/if}}  
+    </div>
+  
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <!-- Render conditional statements -->
+            {{#if logged_in}}
+            <a href='/api/user/logout' class="button is-light">
+                <strong>Log out</strong>
+            </a>
+            {{else}}
+            <a href='/login' class="button is-light">
+              <strong>Log in</strong>
+            </a>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  {{{body}}}
+
+<!-- Footer -->
+  <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong> &copy; MyWorkoutPal</strong> by <a href="https://github.com/calzu0821/my-workout-pal.git" target="_blank">May, Juan, Carlos, and Cristina</a>. The source code is licensed
+          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+          is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+        </p>
+      </div>
+  </footer>
+
+  <!-- jQuery script for Bulma navbar functionality -->
+  <script>
+    $(document).ready(function() {
+      // Check for click events on the navbar burger icon
+      $(".navbar-burger").click(function() {
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        $(".navbar-burger").toggleClass("is-active");
+        $(".navbar-menu").toggleClass("is-active");
+      });
+    });
+  </script>
+  <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+
+</body>
+</html>

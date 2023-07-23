@@ -1,0 +1,72 @@
+/* styles.css */
+
+/* Set overall page styles */
+body {
+    background-color: #fffcfc; /* Light grey background color */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Navigation bar styles */
+  header {
+    background-color: #ff0000; /* Red background color */
+    padding: 10px;
+    color: #fff; /* Text color for the navigation bar */
+  }
+  
+  header {
+    background-color: #ff0000;
+    padding: 10px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  nav ul li {
+    margin-left: 10px;
+  }
+  
+  nav ul li:first-child {
+  margin-left: 0;
+}
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Main content section styles */
+  main {
+    padding: 20px;
+    flex: 1;
+  }
+  
+  section {
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    color: #ff0000; /* Red accent color */
+  }
+  
+  footer {
+    background-color: #f2f2f2;
+    padding: 10px;
+    text-align: center;
+    color: #333;
+  }  

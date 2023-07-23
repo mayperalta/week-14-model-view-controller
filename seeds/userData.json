@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Juan",
+        "email": "juanx1985@icloud.com",
+        "gender": "Male", 
+        "goal": "Maintain current weight", 
+        "password": "password123"
+    },
+    {
+        "name": "Cristina",
+        "email": "cristinaalzuri@gmail.com",
+        "gender": "Female", 
+        "goal": "Lose weight", 
+        "password": "password123"
+    },
+    {
+        "name": "May",
+        "email": "mayperalta@gmail.com",
+        "gender": "Female", 
+        "goal": "Gain muscle", 
+        "password": "password123"
+    }
+]
