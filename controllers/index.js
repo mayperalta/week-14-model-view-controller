@@ -6,7 +6,7 @@ const apiRoutes = require('./api')
 router.use('/', homeRoutes )
 
 // localhost:3001/community
-router.use('/community', homeRoutes)
+router.use('/dashboard', homeRoutes)
 
 // localhost:3001/api
 router.use('/api', apiRoutes)

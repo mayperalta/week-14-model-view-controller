@@ -1,15 +1,17 @@
-<!-- Section -->
-  <div class="tile is-ancestor is-justify-content-center m-6 p-6">
-    <div class="tile is-6 is-vertical is-parent">
-      <div class="tile is-child box has-text-centered">
-        <p class="title p-3">Good Health Starts With Your Workout!</p>
-        <p class="subtitle p-3">Want to workout more mindfully?</p>
-        <p>Welcome to the Workout Tracker App! Start tracking your workouts and reach your fitness goals today with MyWorkoutPal!</p>
-        <div class="is-flex is-justify-content-center p-5">
-          <figure class="image is-128x128">
-            <img src="/images/lifestyle.png" alt="Healthy Balance Image">
-          </figure>
-        </div>
+
+  <!-- Community posts list -->
+    <div class="tile is-6 is-child box">
+        <article class="message is-warning">
+          {{#each communityMap as |community| }}
+          <div class="message-header">
+          {{community.author}}
+          </div>
+          <div class="message-body">
+          {{community.content}} 
+          ({{format_date community.created}})
+          </div>
+          {{/each}}
+        </article>
       </div>
-    </div>
   </div>
+  <script src="/js/newcommunity.js"></script>
