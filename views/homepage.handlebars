@@ -1,17 +1,21 @@
 
   <!-- Community posts list -->
-    <div class="tile is-6 is-child box">
-        <article class="message is-warning">
-          {{#each communityMap as |community| }}
+    {{#each blogMap as |blog| }}
+    <div class="tile is-parent is-justify-content-center p-6 m-3">
+      <article class="message" >
           <div class="message-header">
-          {{community.author}}
+            <p>{{blog.title}} </p>
           </div>
           <div class="message-body">
-          {{community.content}} 
-          ({{format_date community.created}})
+            {{blog.content}} 
+            <br /><br />
+            Posted by: {{user_id}} on {{format_date blog.created}}
           </div>
-          {{/each}}
-        </article>
-      </div>
-  </div>
+     </article>
+    {{/each}}
+    </div>
+
+
+
+
   <script src="/js/newcommunity.js"></script>

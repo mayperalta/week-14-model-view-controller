@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS myworkoutpal_db;
-CREATE DATABASE myworkoutpal_db;
+DROP DATABASE IF EXISTS techblog_db;
+CREATE DATABASE techblog_db;

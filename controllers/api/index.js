@@ -1,12 +1,10 @@
 const router = require('express').Router();
 
 const userRoutes = require('./userRoutes');
-const exerciseRoutes = require('./exerciseRoutes');
-const communityRoutes = require('./communityRoutes');
+const dashboardRoutes = require('./dashboardRoutes');
 
 // localhost:3001/api/user
 router.use('/user', userRoutes);
-router.use('/exercise', exerciseRoutes)
-router.use('/community', communityRoutes)
+router.use('/dashboard', dashboardRoutes)
 
 module.exports = router;
