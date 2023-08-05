@@ -1,9 +1,11 @@
-<!-- Community posts list -->
+<!-- List all blogs -->
 {{#each blogMap as |blog| }}
-<div class="tile is-parent is-justify-content-center p-6 m-3 ">
+<div class="tile is-parent is-justify-content-center p-2 m-3 ">
+  <div class="tile is-10 ">
       <article class="message" >
-          <div class="message-header">
+          <div class="message-header ">
             <p>{{blog.title}} </p>
+            <button class="delete"></button>
           </div>
           <div class="message-body">
             {{blog.content}} 
@@ -11,6 +13,7 @@
             Posted by: {{user_id}} on {{format_date blog.created}}
           </div>
      </article>
+</div>
 </div>
 {{/each}}
 

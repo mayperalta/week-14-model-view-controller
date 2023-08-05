@@ -5,6 +5,7 @@ const { Community } = require('../../models');
 router.post('/', async (req, res) => {
   try {
     console.log("triggered")
+    req.body.user_id = req.session.user_id
     const communityData = await Community.create(req.body);
     console.log(communityData)
     res.status(200).json(communityData);
