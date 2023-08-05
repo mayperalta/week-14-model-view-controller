@@ -1,7 +1,6 @@
-
-  <!-- Community posts list -->
-    {{#each blogMap as |blog| }}
-    <div class="tile is-parent is-justify-content-center p-6 m-3">
+<!-- Community posts list -->
+{{#each blogMap as |blog| }}
+<div class="tile is-parent is-justify-content-center p-6 m-3 ">
       <article class="message" >
           <div class="message-header">
             <p>{{blog.title}} </p>
@@ -12,10 +11,14 @@
             Posted by: {{user_id}} on {{format_date blog.created}}
           </div>
      </article>
-    {{/each}}
-    </div>
+</div>
+{{/each}}
 
-
-
-
-  <script src="/js/newcommunity.js"></script>
+{{#if logged_in}}
+  <div class="tile is-parent is-justify-content-center p-6 m-3 ">
+      <button class="buttons" id="add-post" >
+          <p class="has-text-weight-bold is-size-4 ">+ Add Post</p>
+          </button>
+  </div>
+{{/if}}  
+    

@@ -46,15 +46,24 @@
               </div>
             </div>
         </div>
-        <!-- Workout log list -->
-        <div class="log">
-          <p class="title has-text-centered">Workout History:</p>
-           {{#each workoutMap as |workout| }}
-            <div class="notification is-link">
-            <button class="delete"></button>
-               {{format_date workout.created}}, {{workout.exercise_category}}, {{workout.exercise_name}}, {{workout.duration}} minutes
-            </div>
-            {{/each}}
-        </div>        
+
+      <!-- blog list -->
+
+      <div class="log">
+      {{#each blogMap as |blog| }}
+       <div class="log">
+        <div class="tile is-parent is-justify-content-center p-6 m-3">
+          <article class="message" >
+              <div class="message-header">
+                <p>{{blog.title}} </p>
+              </div>
+              <div class="message-body">
+                {{blog.content}} 
+                <br /><br />
+                Posted by: {{user_id}} on {{format_date blog.created}}
+              </div>
+          </article>
+          </div>
+      {{/each}}
       </div>
 
