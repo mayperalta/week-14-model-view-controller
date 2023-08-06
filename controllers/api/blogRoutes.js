@@ -1,34 +1,56 @@
 // Import modules
 const router = require('express').Router();
-const { Workout } = require('../../models');
+const { Blog, User } = require('../../models');
 
+// add 
 router.post('/', async (req, res) => {
   try {
     req.body.user_id = req.session.user_id
-    const workoutData = await Workout.create(req.body);
-    console.log(workoutData)
-    res.status(200).json(workoutData);
+    const blogData = await Blog.create(req.body);
+    console.log(blogData)
+    res.status(200).json(blogData);
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
-// router.delete('/', async (req, res) => {
-//     const count = await Workout.destroy({ where: { id: req.body.exercise_id } });
-//     console.log(`deleted row(s): ${count}`);
-// })
+// update
+router.put('/:id', (req, res) => {
+  Blog.update(
+    {
+      title: req.body.title,
+      content: req.body.content,
+      author: req.body.author,
+      data_created: req.body.date_created,
+    },
+    {
+      where: {
+        id: req.params.id,
+      },
+    }
+  )
+    .then((updatedBlog) => {
+      res.json(updatedBlog);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.json(err);
+    });
+});
 
+
+// delete
 router.delete('/:id', async (req, res) => {
 
   try {
-    const workoutData = await Workout.destroy({
+    const blogData = await Workout.destroy({
       where: {
         id: req.params.id
       },
     });
-    console.log(workoutData)
+    console.log(blogData)
 
-    if (!workoutData) {
+    if (!blogData) {
       res.sendStatus(404).json({ message: 'No Workout data found with this user!' });
       return;
     }

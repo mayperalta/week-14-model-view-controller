@@ -8,7 +8,7 @@ const blogFormHandler = async (event) => {
 
   if (blogTitle && blogMessage && dateCreated) {
     // Send a POST request to the API endpoint
-    const response = await fetch("/homepage", {
+    const response = await fetch("/", {
       method: "POST",
       body: JSON.stringify({
         title: blogTitle,
@@ -20,7 +20,7 @@ const blogFormHandler = async (event) => {
 
     if (response.ok) {
       // If successful, redirect the browser to the profile page
-      document.location.replace('/userblog');
+      document.location.replace('/');
     } else {
       alert(response.statusText);
     }

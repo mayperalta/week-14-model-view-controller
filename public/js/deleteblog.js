@@ -5,7 +5,7 @@ const delButtonHandler = async (event) => {
     if (event.target.hasAttribute('value')) {
       const id = event.target.getAttribute('value');
   
-      const response = await fetch(`/api/exercise/${id}`, {
+      const response = await fetch(`/api/homepage/${id}`, {
         method: 'DELETE',
       });
   
@@ -17,4 +17,4 @@ const delButtonHandler = async (event) => {
     }
   };
 
-  document.getElementById("delete-exercise-button").addEventListener("click", delButtonHandler);
+  document.getElementById("delete-blog-button").addEventListener("click", delButtonHandler);
