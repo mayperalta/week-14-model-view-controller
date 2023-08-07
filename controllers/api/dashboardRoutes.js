@@ -1,17 +1,21 @@
 // Import modules
 const router = require('express').Router();
-const { Blog } = require('../../models');
+const { Blog, User} = require('../../models');
 
 // add 
 router.post('/', async (req, res) => {
   try {
     req.body.user_id = req.session.user_id
-    const blogData = await Blog.create(req.body);
-    console.log(blogData)
-    res.status(200).json(blogData);
-  } catch (err) {
-    res.status(400).json(err);
-  }
+    const newPost = await Blog.create({
+      title: req.body.title,
+      content: req.body.content,
+      created: req.body.created,
+      user_id: req.session.user_id || req.body.user_id
+        });
+        res.status(200).json(newPost);
+    } catch (err) {
+        res.status(400).json(err);
+    }
 });
 
 // update

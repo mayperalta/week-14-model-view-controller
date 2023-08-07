@@ -13,7 +13,7 @@ router.use('/dashboard', dashboardRoutes)
 router.use('/api', apiRoutes)
 
 // localhost:3001/api
-router.use('/signup', homeRoutes)
+router.use('/userblog', homeRoutes)
 
 
 module.exports = router;
