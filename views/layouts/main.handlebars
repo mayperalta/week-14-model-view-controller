@@ -21,40 +21,21 @@
       </p>
   
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
       </a>
     </div>
   
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
-            <!-- Render conditional statements -->
+            <!-- Render conditional statements -->    
+            <a class="navbar-item" href='/'>Home</a>  
+            <a class="navbar-item" href='/dashboard'>Dashboard</a>
             {{#if logged_in}}
-                <a class="navbar-item" href='/'>Home</a>
-                <a class="navbar-item" href='/userblog'>Dashboard</a>
+                <a class="navbar-item" href='/api/user/logout'>Log out</a>    
             {{else}}
-                <a class="navbar-item" href='/'>Home</a>
-                <a class="navbar-item" href='/dashboard'>Dashboard</a>
+                <a class="navbar-item" href='/login'>Log In</a>
             {{/if}}  
     </div>
-  
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="buttons">
-            <!-- Render conditional statements -->
-            {{#if logged_in}}
-            <a href='/api/user/logout' class="button is-light">
-                <strong>Log out</strong>
-            </a>
-            {{else}}
-            <a href='/login' class="button is-light">
-              <strong>Log in</strong>
-            </a>
-            {{/if}}
-          </div>
-        </div>
-      </div>
+
     </div>
   </nav>
 

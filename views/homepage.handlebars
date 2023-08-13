@@ -5,12 +5,10 @@
       <article class="message" >
           <div class="message-header ">
             <p>{{blog.title}} </p>
-            <button class="delete"></button>
+            <button> Posted by: {{blog.user_id}} on {{format_date blog.created}}</button>
           </div>
           <div class="message-body">
             {{blog.content}} 
-            <br /><br />
-            Posted by: {{user_id}} on {{format_date blog.created}}
           </div>
      </article>
 </div>
@@ -24,4 +22,7 @@
           </button>
   </div>
 {{/if}}  
+
+
+<!-- <button class="delete"></button> -->
     
