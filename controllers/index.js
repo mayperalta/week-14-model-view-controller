@@ -9,11 +9,4 @@ router.use('/', homeRoutes)
 router.use('/api', apiRoutes)
 
 
-// // localhost:3001/dashboard
-// router.use('/dashboard', dashboardRoutes)
-
-// // localhost:3001/api
-// router.use('/signup', homeRoutes)
-
-
 module.exports = router;

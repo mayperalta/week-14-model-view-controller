@@ -2,6 +2,10 @@
 const router = require('express').Router();
 const { Blog, User } = require('../../models');
 
+router.get('/api/user/post', (req, res) => {
+  res.render('post');
+  });
+
 // add 
 router.post('/', async (req, res) => {
   try {

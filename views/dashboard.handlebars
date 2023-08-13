@@ -1,4 +1,7 @@
 <!-- List all posts unique to user -->
+ <div class="tile is-parent is-justify-content-center p-2 m-3 ">
+ <h2 class="has-text-weight-bold is-size-2">-- My Blog Posts --</h2>
+ </div>
 {{#each blogMap as |blog| }}
 <div class="tile is-parent is-justify-content-center p-2 m-3 ">
   <div class="tile is-10 ">
@@ -15,11 +18,14 @@
 </div>
 {{/each}}
 
+{{#if logged_in}}
   <div class="tile is-parent is-justify-content-center p-6 m-3 ">
       <button class="buttons" id="add-post" >
-          <a href="/post" class="has-text-weight-bold is-size-4">+ Add Post</a>
+          <p class="has-text-weight-bold is-size-4 ">+ Add New Post</p>
           </button>
   </div>
+{{/if}}  
+
 
 
 
