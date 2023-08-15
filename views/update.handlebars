@@ -1,0 +1,46 @@
+<!-- Add blog here -->
+<div class="tile is-parent is-justify-content-center p-6 m-3 ">
+  <div class="tile is-6 is-child box has-text-centered">
+   <p class="title">Add a Blog Post</p>
+   <div class="field">
+      <label class="label">ID</label>
+      <div class="control has-icons-left has-icons-right">
+        <input class="input" value="{{post.id}}" placeholder="Blog Title" id="id">
+      </div>
+    </div>
+   <!-- title -->
+   <div class="field">
+      <label class="label">Title</label>
+      <div class="control has-icons-left has-icons-right">
+        <input class="input" type="text" placeholder="Blog Title" id="title">
+      </div>
+    </div>
+    <!-- description -->
+    <div class="field">
+      <label class="label">Message</label>
+      <div class="control has-icons-left has-icons-right">
+        <textarea class="input" name="textarea" placeholder="Message" id="content" rows="4" cols="50"></textarea>
+      </div>
+    </div>
+    <!-- Date -->
+    <div class="field">
+      <label class="label">Date</label>
+      <div class="control has-icons-left has-icons-right">
+        <input class="input" type="date" id="date_created" name="trip-start" value="MM/DD/YYYY">
+        <span class="icon is-small is-left">
+          <i class="fas fa-calendar"></i>
+        </span>
+      </div>
+    </div>
+     <!-- Submit button -->
+    <div class="field is-grouped is-justify-content-center">
+      <div class="control">
+        <button class="button is-info" id="update">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<script src="/js/updateBlog.js"></script>
+
+

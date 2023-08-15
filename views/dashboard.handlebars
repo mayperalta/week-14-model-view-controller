@@ -13,6 +13,7 @@
           <div class="message-body">
             {{blog.content}} 
           </div>
+          ]<button id="update-blog"><a href="/update">Update</a></button>
      </article>
 </div>
 </div>
@@ -20,12 +21,11 @@
 
 {{#if logged_in}}
   <div class="tile is-parent is-justify-content-center p-6 m-3 ">
-      <button class="buttons" id="add-post" >
-          <p class="has-text-weight-bold is-size-4 ">+ Add New Post</p>
-          </button>
+      <button class="buttons has-text-weight-bold is-size-4 " id="add-post" >
+        <a href="/post">+ Add New Post</a>
+      </button>
   </div>
 {{/if}}  
-
 
 
 

@@ -1,20 +1,34 @@
-// get id from button
-// fetch delete send button id as request body
+const updateHandler = async () => {
 
-const updateButtonHandler = async (event) => {
-    if (event.target.hasAttribute('value')) {
-      const id = event.target.getAttribute('value');
-  
-      const response = await fetch(`/api/homepage/${id}`, {
-        method: 'UPDATE',
-      });
-  
-      if (response.ok) {
-        document.location.reload();
-      } else {
-        alert('Failed to delete the Workout log');
-      }
+  // Collect values from the login form
+  const blogTitle = document.querySelector("#title").value.trim();
+  const blogMessage = document.querySelector("#content").value.trim();
+  const dateCreated = document.querySelector("#date_created").value.trim();
+
+  if (blogTitle && blogMessage && dateCreated) {
+    // Send a POST request to the API endpoint
+    const response = await fetch(`/api/post/${id}`, {
+      method: "PUT",
+      body: JSON.stringify({
+        title: blogTitle,
+        content: blogMessage,
+        created: dateCreated,
+      }),
+      headers: { "Content-Type": "application/json" },
+    });
+
+    if (response.ok) {
+      // If successful, redirect the browser to the profile page
+      document.location.replace('/dashboard');
+      console.log("Added")
+    } else {
+      alert(response.statusText);
     }
-  };
+  }
+};
 
-  document.getElementById("update-blog").addEventListener("click", delButtonHandler);
+document
+  .getElementById("blog-id")
+  .addEventListener("click", blogFormHandler);
+
+  document.getElementById("update").addEventListener("click", updateHandler);

@@ -1,46 +1,41 @@
 // Import modules
 const router = require('express').Router();
-const { Blog, User } = require('../../models');
-
-router.get('/api/user/post', (req, res) => {
-  res.render('post');
-  });
-
+const { Blog, User} = require('../../models');
+const withAuth = require('../../utils/auth');
 // add 
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   try {
-    req.body.user_id = req.session.user_id
-    const blogData = await Blog.create(req.body);
-    console.log(blogData)
-    res.status(200).json(blogData);
-  } catch (err) {
-    res.status(400).json(err);
-  }
+    // req.body.user_id = req.session.user_id
+    const newPost = await Blog.create({
+      title: req.body.title,
+      content: req.body.content,
+      created: req.body.created,
+      user_id: req.session.user_id
+      });
+        res.status(200).json(newPost);
+    } catch (err) {
+        res.status(400).json(err);
+    }
 });
 
 // update
-router.put('/:id', (req, res) => {
-  Blog.update(
-    {
-      title: req.body.title,
-      content: req.body.content,
-      author: req.body.author,
-      data_created: req.body.date_created,
-    },
-    {
+router.put ('/:id', async (req, res) => {
+  try {
+    const blogData = await Blog.update(req.body, {
       where: {
         id: req.params.id,
       },
+    }); 
+    if (!blogData[0]) {
+      res.sendStatus(404).json({ message: 'No Workout data found with that id!' });
+      return;
     }
-  )
-    .then((updatedBlog) => {
-      res.json(updatedBlog);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.json(err);
-    });
-});
+    res.sendStatus(200);
+  }
+    catch (err) {
+    res.sendStatus(500).json(err);
+    }
+}); 
 
 
 // delete
@@ -66,3 +61,4 @@ router.delete('/:id', async (req, res) => {
 });
 
 module.exports = router;
+

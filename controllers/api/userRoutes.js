@@ -7,6 +7,7 @@ router.post('/', async (req, res) => {
 
     req.session.save(() => {
       req.session.user_id = userData.id;
+      req.session.username = userData.username;
       req.session.logged_in = true;
 
       res.status(200).json(userData);
@@ -15,6 +16,7 @@ router.post('/', async (req, res) => {
     res.status(400).json(err);
   }
 });
+
 
 router.post('/login', async (req, res) => {
   try {

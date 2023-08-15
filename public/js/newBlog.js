@@ -3,8 +3,8 @@ const blogFormHandler = async (event) => {
 
   // Collect values from the login form
   const blogTitle = document.querySelector("#title").value.trim();
-  const blogMessage = document.querySelector("#message").value.trim();
-  const dateCreated = document.querySelector("#created").value.trim();
+  const blogMessage = document.querySelector("#content").value.trim();
+  const dateCreated = document.querySelector("#date_created").value.trim();
 
   if (blogTitle && blogMessage && dateCreated) {
     // Send a POST request to the API endpoint
