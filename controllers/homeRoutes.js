@@ -1,6 +1,6 @@
 // Import modules
 const router = require('express').Router();
-const { Blog, User } = require('../models');
+const { User, Blog, Comment} = require('../models');
 
 // routes to / which lists all blog posts
 router.get('/', async (req, res) => {
@@ -81,7 +81,13 @@ router.get('/post', (req,res) => {
 
 router.get('/update', (req,res) => {
   res.render('update',{logged_in: req.session.logged_in})
-
 });
+
+router.get('/delete', (req,res) => {
+  res.render('delete',{logged_in: req.session.logged_in})
+});
+
+
+
 module.exports = router;
 

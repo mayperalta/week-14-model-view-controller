@@ -1,20 +1,19 @@
-// get id from button
-// fetch delete send button id as request body
-
 const delButtonHandler = async (event) => {
     if (event.target.hasAttribute('value')) {
       const id = event.target.getAttribute('value');
+
+      console.log(`Post ID: ${id}`);
   
-      const response = await fetch(`/api/homepage/${id}`, {
+      const response = await fetch(`/api/post/${id}`, {
         method: 'DELETE',
       });
   
       if (response.ok) {
         document.location.reload();
       } else {
-        alert('Failed to delete the Workout log');
+        alert('Failed to delete the blog post ');
       }
     }
   };
 
-  document.getElementById("delete-blog-button").addEventListener("click", delButtonHandler);
+  document.getElementById("delete-btn").addEventListener("click", delButtonHandler);

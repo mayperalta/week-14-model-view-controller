@@ -28,7 +28,7 @@ const updateHandler = async () => {
 };
 
 document
-  .getElementById("blog-id")
-  .addEventListener("click", blogFormHandler);
+  .getElementById("update-btn")
+  .addEventListener("click",  updateHandler);
 
-  document.getElementById("update").addEventListener("click", updateHandler);
+// document.getElementById("update-btn").addEventListener("click", updateHandler);

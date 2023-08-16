@@ -1,32 +1,33 @@
 <!-- Add blog here -->
+{{#each blogMap as | blog| }}
 <div class="tile is-parent is-justify-content-center p-6 m-3 ">
   <div class="tile is-6 is-child box has-text-centered">
    <p class="title">Update a Blog Post</p>
    <div class="field">
       <label class="label">ID</label>
       <div class="control has-icons-left has-icons-right">
-        <input class="input" value="{{post.id}}" placeholder="Blog Title" id="id">
+        <input class="input" value="{{blog.id}}" placeholder="Blog Title" id="id">{{blog.id}}
       </div>
     </div>
    <!-- title -->
    <div class="field">
       <label class="label">Title</label>
       <div class="control has-icons-left has-icons-right">
-        <input class="input" type="text" placeholder="Blog Title" id="title">
+        <input class="input" type="text" placeholder="Blog Title" id="title"  value="{{blog.title}}">
       </div>
     </div>
     <!-- description -->
     <div class="field">
-      <label class="label">Message</label>
+      <label class="label">Content</label>
       <div class="control has-icons-left has-icons-right">
-        <textarea class="input" name="textarea" placeholder="Message" id="content" rows="4" cols="50"></textarea>
+        <textarea class="input" name="textarea" placeholder="Message" id="content" rows="4" cols="50"  value="{{blog.content}}"></textarea>
       </div>
     </div>
     <!-- Date -->
     <div class="field">
       <label class="label">Date</label>
       <div class="control has-icons-left has-icons-right">
-        <input class="input" type="date" id="date_created" name="trip-start" value="MM/DD/YYYY">
+        <input class="input" type="date" id="date_created" name="trip-start" value="MM/DD/YYYY"  value="{{blog.date_created}}">
         <span class="icon is-small is-left">
           <i class="fas fa-calendar"></i>
         </span>
@@ -35,12 +36,14 @@
      <!-- Submit button -->
     <div class="field is-grouped is-justify-content-center">
       <div class="control">
-        <button class="button is-info" id="update">Update</button>
+        <button class="button is-info" id="update-btn" value="{{blog.id}}">Update</button>
       </div>
     </div>
   </div>
 </div>
 </div>
-<script src="/js/updateBlog.js"></script>
+{{/each}}
+
+<script src="/js/update.js"></script>
 
 

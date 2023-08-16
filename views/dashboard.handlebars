@@ -10,20 +10,20 @@
   </div>
 {{/if}}  
 
-{{#each blogMap as |blog| }}
+{{#each blogMap as | blog| }}
 <div class="tile is-parent is-justify-content-center p-4 m-3 ">
   <div class="tile is-10 ">
       <article class="message" >
           <div class="message-header ">
             <p>{{blog.title}} </p>
-            <button> Posted by: {{user_id}} on {{format_date blog.created}}</button>
+            <button>Posted by: {{blog.user.username}} on {{format_date blog.created}}</button>
           </div>
           <div class="message-body">
             {{blog.content}} 
           </div>
-          <div class="is-justify-content-center">
-              <button class="buttons has-text-weight-bold is-size-8" id="update-blog"><a href="/update">Update</a></button>
-              <button class="buttons has-text-weight-bold is-size-8" id="delete-blog"><a href="/delete">Delete</a></button>
+          <div class="is flex is-justify-content-center is-center">
+              <button class="buttons has-text-weight-bold is-size-8" id="update-btn" value="{{blog.id}}"><a href="/update">Update</a></button>
+              <button class="buttons has-text-weight-bold is-size-8" id="delete-btn" value="{{blog.id}}"><a href="/delete">Delete</a></button>
           </div>
      </article>
           </div>
@@ -32,13 +32,6 @@
 </div>
 {{/each}}
 
-{{#if logged_in}}
-  <div class="tile is-parent is-justify-content-center p-3 m-3 ">
-      <button class="buttons has-text-weight-bold is-size-4 " id="add-post" >
-        <a href="/post">+ Add New Post</a>
-      </button>
-  </div>
-{{/if}}  
-
-
+<script src="/js/update.js"></script>
+<script src="/js/delete.js"></script>
 

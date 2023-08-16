@@ -1,19 +1,17 @@
-// Import modules
 const router = require('express').Router();
-const { Blog, User, Comment} = require('../../models');
+const {Comment} = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// create a new post
+// create new comment
 router.post('/', withAuth, async (req, res) => {
   try {
     // req.body.user_id = req.session.user_id
-    const newPost = await Blog.create({
-      title: req.body.title,
-      content: req.body.content,
-      created: req.body.created,
+    const commentData = await Comment.create({
+      comment_entry: req.body.comment_entry,
+      post_id: req.body.post_id,
       user_id: req.session.user_id
       });
-        res.status(200).json(newPost);
+        res.status(200).json(commentData);
     } catch (err) {
         res.status(400).json(err);
     }
@@ -22,16 +20,16 @@ router.post('/', withAuth, async (req, res) => {
 // update current post
 router.put ('/:id', withAuth,async (req, res) => {
   try {
-    const blogData = await Blog.update(req.body, {
+    const commentData = await Comment.update(req.body, {
       where: {
         id: req.params.id,
       },
     }); 
-    if (!blogData[0]) {
-      res.sendStatus(404).json({ message: 'No Workout data found with that id!' });
+    if (!commentData[0]) {
+      res.sendStatus(404).json({ message: 'No comment found with that id!' });
       return;
     }
-    res.sendStatus(200).json(blogData);
+    res.sendStatus(200).json(commentData);
   }
     catch (err) {
     res.sendStatus(500).json(err);
@@ -43,20 +41,19 @@ router.put ('/:id', withAuth,async (req, res) => {
 router.delete('/:id', withAuth, async (req, res) => {
 
   try {
-    const blogData = await Workout.destroy({
+    const commentData = await Workout.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id
       },
     });
-    console.log(blogData)
+    console.log(commentData)
 
-    if (!blogData) {
-      res.sendStatus(404).json({ message: 'No post found with this user!' });
+    if (!commentData) {
+      res.sendStatus(404).json({ message: 'No comment found with this user!' });
       return;
     }
 
-    res.sendStatus(200).json(blogData);
+    res.sendStatus(200).json(commentData);
   } catch (err) {
     res.sendStatus(500).json(err);
   }
