@@ -1,5 +1,7 @@
 const delButtonHandler = async (event) => {
-    if (event.target.hasAttribute('value')) {
+    
+  if (event.target.matches('.delete-btn') && event.target.hasAttribute('value')) {
+
       const id = event.target.getAttribute('value');
 
       console.log(`Post ID: ${id}`);
@@ -9,11 +11,13 @@ const delButtonHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.reload();
+        document.getElementById(`post-${id}`).remove();
       } else {
         alert('Failed to delete the blog post ');
       }
     }
   };
 
-  document.getElementById("delete-btn").addEventListener("click", delButtonHandler);
+  document
+    .getElementById("delete-btn")
+    .addEventListener("click",  delButtonHandler);

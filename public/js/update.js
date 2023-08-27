@@ -4,15 +4,22 @@ const updateHandler = async () => {
   const blogTitle = document.querySelector("#title").value.trim();
   const blogMessage = document.querySelector("#content").value.trim();
   const dateCreated = document.querySelector("#date_created").value.trim();
+  //const userId = document.querySelector("#update-btn").value.trim();
+  //console.log(userId);
 
-  if (blogTitle && blogMessage && dateCreated) {
+  // last element of what was split from the URL address
+  var subPaths = window.location.href.split("/");
+  var postId = subPaths[subPaths.length-1];
+
+  if (blogTitle && blogMessage) {
     // Send a POST request to the API endpoint
-    const response = await fetch(`/api/post/${id}`, {
+
+    // created: dateCreated,
+    const response = await fetch(`/api/post/${postId}`, {
       method: "PUT",
       body: JSON.stringify({
         title: blogTitle,
         content: blogMessage,
-        created: dateCreated,
       }),
       headers: { "Content-Type": "application/json" },
     });

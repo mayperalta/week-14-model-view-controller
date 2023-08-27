@@ -2,6 +2,44 @@
 const router = require('express').Router();
 const { User, Blog, Comment} = require('../models');
 
+// get localhost:3001/update/2
+router.get('/update/:id', async (req, res) => {
+  //res.send("This is update form")
+  try {
+
+    // get the id from req.params.id
+    // find the blog with that id
+    // save it as blogData so handlebars can render it
+
+
+    //req.body.user_id = req.session.user_id;
+    // const blogData = await Blog.findAll({
+    //   include: [{
+    //     model: User,
+    //     attributes: ['id', 'username'],
+    //   }],
+    //   order: [['created', 'DESC']]
+    // });
+    // const blogMap = blogData.map((blog) => blog.get({ plain: true }));
+
+    // erase this fake blog object after you get from database
+      var blog = {
+        title: "FakeData",
+        content: "Passed successfully into handlebars"
+      }
+    
+
+    res.render('update', {
+      blog,
+      logged_in: req.session.logged_in,
+      user_id: req.session.user_id 
+    })
+  } catch (err) {
+    console.log(err)
+    res.status(500).json(err)
+    }
+}); 
+
 // routes to / which lists all blog posts
 router.get('/', async (req, res) => {
   try {
@@ -79,13 +117,29 @@ router.get('/post', (req,res) => {
 
 });
 
-router.get('/update', (req,res) => {
-  res.render('update',{logged_in: req.session.logged_in})
+router.get('/update/:id', async (req,res) => {
+  try {
+    const blogData = await Blog.findOne({
+      where: {
+        user_id: req.session.user_id
+      },
+      include: [{
+        model: User,
+        attributes: ['id', 'username'],
+      }],
+    })
+    const blogMap = blogData.get({plain:true}); 
+    console.log(blogMap); 
+    res.render('update', {blogMap, logged_in: req.session.logged_in})
+  } catch (err) {
+    console.log(err)
+    res.status(500).json(err)
+  }
+
+
 });
 
-router.get('/delete', (req,res) => {
-  res.render('delete',{logged_in: req.session.logged_in})
-});
+
 
 
 

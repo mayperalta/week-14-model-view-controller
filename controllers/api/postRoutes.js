@@ -3,6 +3,8 @@ const router = require('express').Router();
 const { Blog, User, Comment} = require('../../models');
 const withAuth = require('../../utils/auth');
 
+
+
 // create a new post
 router.post('/', withAuth, async (req, res) => {
   try {
@@ -20,6 +22,7 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 // update current post
+// update /api/posts/:id
 router.put ('/:id', withAuth,async (req, res) => {
   try {
     const blogData = await Blog.update(req.body, {
@@ -27,10 +30,10 @@ router.put ('/:id', withAuth,async (req, res) => {
         id: req.params.id,
       },
     }); 
-    if (!blogData[0]) {
-      res.sendStatus(404).json({ message: 'No Workout data found with that id!' });
-      return;
-    }
+    // if (!blogData[0]) {
+    //   res.sendStatus(404).json({ message: 'No Workout data found with that id!' });
+    //   return;
+    // }
     res.sendStatus(200).json(blogData);
   }
     catch (err) {
@@ -43,7 +46,7 @@ router.put ('/:id', withAuth,async (req, res) => {
 router.delete('/:id', withAuth, async (req, res) => {
 
   try {
-    const blogData = await Workout.destroy({
+    const blogData = await Blog.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id
@@ -58,6 +61,7 @@ router.delete('/:id', withAuth, async (req, res) => {
 
     res.sendStatus(200).json(blogData);
   } catch (err) {
+    console.log(err)
     res.sendStatus(500).json(err);
   }
 });

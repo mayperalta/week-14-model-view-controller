@@ -1,14 +1,8 @@
 <!-- Add blog here -->
-{{#each blogMap as | blog| }}
 <div class="tile is-parent is-justify-content-center p-6 m-3 ">
   <div class="tile is-6 is-child box has-text-centered">
    <p class="title">Update a Blog Post</p>
-   <div class="field">
-      <label class="label">ID</label>
-      <div class="control has-icons-left has-icons-right">
-        <input class="input" value="{{blog.id}}" placeholder="Blog Title" id="id">{{blog.id}}
-      </div>
-    </div>
+
    <!-- title -->
    <div class="field">
       <label class="label">Title</label>
@@ -20,7 +14,7 @@
     <div class="field">
       <label class="label">Content</label>
       <div class="control has-icons-left has-icons-right">
-        <textarea class="input" name="textarea" placeholder="Message" id="content" rows="4" cols="50"  value="{{blog.content}}"></textarea>
+        <textarea class="input" name="textarea" placeholder="Message" id="content" rows="4" cols="50"  value="{{blog.content}}">{{blog.content}}</textarea>
       </div>
     </div>
     <!-- Date -->
@@ -42,7 +36,6 @@
   </div>
 </div>
 </div>
-{{/each}}
 
 <script src="/js/update.js"></script>
 
