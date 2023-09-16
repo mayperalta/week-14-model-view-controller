@@ -29,6 +29,8 @@ Navigate to the repository folder and on the command line terminal:
   ## Visuals
   Here is a video link along with visuals of the Logo generator interface.
 
+  ![Watch video](./assets/tech-blog.gif)
+
   ## License
   This project is covered under the MIT license.
 
