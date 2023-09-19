@@ -27,6 +27,9 @@ Navigate to the repository folder and on the command line terminal:
   2. Run `node server.js`
 
   ## Visuals
+  Here's how the screen looks like:
+  ![Image](./assets/tech-blog.png)
+
   Here is a video link along with visuals of the Logo generator interface.
 
   ![Watch video](./assets/tech-blog.gif)
