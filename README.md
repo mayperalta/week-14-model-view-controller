@@ -28,7 +28,15 @@ Navigate to the repository folder and on the command line terminal:
 
   ## Visuals
   Here's how the screen looks like:
+
+  Homepage: 
   ![Image](./assets/tech-blog.png)
+
+  Login/Sign-Up
+  ![Image](./assets/login.png)
+
+  Dashboard
+  ![Image](./assets/dashboard.png)
 
   Here is a video link along with visuals of the Logo generator interface.
 
